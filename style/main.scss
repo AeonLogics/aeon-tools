@@ -1,4 +1,12 @@
+@use "variables" as v;
+@use "header" as header;
+
 body {
-	font-family: sans-serif;
-	text-align: center;
+
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	font-family: v.$font-main;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	-webkit-font-smoothing: antialiased;
+	margin: 0;
 }

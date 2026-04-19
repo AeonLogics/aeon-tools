@@ -1,0 +1,74 @@
+@use "variables" as v;
+
+.header {
+  background-color: var(--surface);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0.5rem 2rem;
+
+  // Three-column grid ensures the center is mathematically perfect
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-self: start; // Keep logo on the left
+    cursor: pointer;
+
+    .logo-1 {
+      font-family: var(--font-body);
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: var(--text-color);
+      text-transform: uppercase;
+    }
+
+    .logo-2 {
+      font-family: var(--font-code);
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-left: 8px;
+      padding: 1px 8px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      opacity: 0.8;
+    }
+  }
+
+  .tool-info {
+    justify-self: center; // Force to center
+
+    p {
+      margin: 0;
+      font-family: var(--font-code);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-color);
+      letter-spacing: 0.5px;
+
+      // Makes it look like a status bar item
+      &::before {
+        content: "[ ";
+        color: var(--accent);
+      }
+      &::after {
+        content: " ]";
+        color: var(--accent);
+      }
+    }
+  }
+
+  // Placeholder to keep the center balanced
+  .header-end {
+    justify-self: end;
+    font-family: var(--font-code);
+    font-size: 0.7rem;
+    opacity: 0.4;
+  }
+}

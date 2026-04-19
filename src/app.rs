@@ -4,17 +4,18 @@ use leptos_router::{
     components::{Route, Router, Routes},
     StaticSegment,
 };
+use crate::components::Header;
 
 pub fn shell(options: LeptosOptions) -> impl IntoView {
     view! {
         <!DOCTYPE html>
-        <html lang="en">
+        <html lang="en" data-theme="dark">
             <head>
                 <meta charset="utf-8"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <AutoReload options=options.clone() />
                 <HydrationScripts options/>
-                <MetaTags/>
+                <MetaTags />
             </head>
             <body>
                 <App/>
@@ -38,6 +39,7 @@ pub fn App() -> impl IntoView {
 
         // content for this welcome page
         <Router>
+            <Header />
             <main>
                 <Routes fallback=|| "Page not found.".into_view()>
                     <Route path=StaticSegment("") view=HomePage/>
