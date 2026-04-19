@@ -1,0 +1,32 @@
+// 1. Define your SCSS "Source" variables
+$primary-purple: #9D00FF;
+$light-bg: #FDFBF7;
+$dark-bg: #0F0A15;
+$light-text: #1A1A1B;
+$dark-text: #E0D5EB;
+
+// 2. Map them to Runtime CSS Variables
+:root {
+  --bg-color: #{$light-bg};
+  --text-color: #{$light-text};
+  --accent: #{$primary-purple};
+  --surface: #FFFFFF;
+}
+
+// 3. Define the Dark Theme override
+[data-theme="dark"] {
+  --bg-color: #{$dark-bg};
+  --text-color: #{$dark-text};
+  --surface: #1C1425;
+
+  // You can even adjust the purple to be slightly
+  // brighter for dark mode contrast
+  --accent: #B033FF;
+}
+
+// 4. Use them in your components
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
