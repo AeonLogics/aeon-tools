@@ -1,8 +1,8 @@
 @use "variables" as v;
 @use "header" as header;
+@use "tool-selector" as tool-selector;
 
 body {
-
 	background-color: var(--bg-color);
 	color: var(--text-color);
 	font-family: v.$font-main;

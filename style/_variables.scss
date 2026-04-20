@@ -1,4 +1,4 @@
-$primary-bridge: #6366f1;
+$primary-bridge: #A855F7;
 $deep-velvet: #0B0812;
 $light-bg: #FDFBF7;
 $light-text: #1A1A1B;
@@ -12,6 +12,7 @@ $font-mono: 'JetBrains Mono', 'Fira Code', monospace;
   --text-color: #{$light-text};
   --accent: #{$primary-bridge};
   --surface: #FFFFFF;
+  --on-accent: #{$dark-text};
   --border: #E5E7EB;
 }
 
@@ -19,6 +20,5 @@ $font-mono: 'JetBrains Mono', 'Fira Code', monospace;
   --bg-color: #{$deep-velvet};
   --surface: #161221;
   --text-color: #{$dark-text};
-  --accent: #A855F7;
   --border: #2D243D;
 }

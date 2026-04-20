@@ -1,10 +1,10 @@
 @use "variables" as v;
 
 .header {
-  background-color: var(--surface);
+  background-color: var(--bg-color);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  padding: 0.5rem 2rem;
+  border-bottom: 1px solid var(--accent);
+  padding: 0.8rem 3rem;
 
   // Three-column grid ensures the center is mathematically perfect
   display: grid;
@@ -18,14 +18,14 @@
   .logo {
     display: flex;
     align-items: center;
-    justify-self: start; // Keep logo on the left
+    justify-self: start;
     cursor: pointer;
+    font-family: var(--font-body);
 
     .logo-1 {
-      font-family: var(--font-body);
       font-weight: 900;
       font-size: 1.1rem;
-      color: var(--text-color);
+      color: var(--accent);
       text-transform: uppercase;
     }
 
@@ -42,21 +42,22 @@
   }
 
   .tool-info {
-    justify-self: center; // Force to center
+    justify-self: center;
 
     p {
       margin: 0;
       font-family: var(--font-code);
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--text-color);
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--accent);
       letter-spacing: 0.5px;
 
-      // Makes it look like a status bar item
       &::before {
         content: "[ ";
+
         color: var(--accent);
       }
+
       &::after {
         content: " ]";
         color: var(--accent);

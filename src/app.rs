@@ -4,21 +4,22 @@ use leptos_router::{
     components::{Route, Router, Routes},
     StaticSegment,
 };
-use crate::components::Header;
+use crate::components::{Header, ToolSelector};
+use crate::pages::ToolSelectorPage;
 
 pub fn shell(options: LeptosOptions) -> impl IntoView {
     view! {
         <!DOCTYPE html>
         <html lang="en" data-theme="dark">
             <head>
-                <meta charset="utf-8"/>
-                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <meta charset="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <AutoReload options=options.clone() />
-                <HydrationScripts options/>
+                <HydrationScripts options />
                 <MetaTags />
             </head>
             <body>
-                <App/>
+                <App />
             </body>
         </html>
     }
@@ -32,17 +33,18 @@ pub fn App() -> impl IntoView {
     view! {
         // injects a stylesheet into the document <head>
         // id=leptos means cargo-leptos will hot-reload this stylesheet
-        <Stylesheet id="leptos" href="/pkg/aeon-tools.css"/>
+        <Stylesheet id="leptos" href="/pkg/aeon-tools.css" />
 
         // sets the document title
-        <Title text="Welcome to Leptos"/>
+        <Title text="Welcome to Leptos" />
 
         // content for this welcome page
         <Router>
             <Header />
+            <ToolSelector />
             <main>
                 <Routes fallback=|| "Page not found.".into_view()>
-                    <Route path=StaticSegment("") view=HomePage/>
+                    <Route path=StaticSegment("") view=ToolSelectorPage />
                 </Routes>
             </main>
         </Router>
