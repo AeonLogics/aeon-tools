@@ -5,6 +5,7 @@ use leptos_router::{
     StaticSegment,
 };
 use crate::components::{Header, ToolSelector};
+use crate::core::Toolzard;
 use crate::pages::ToolSelectorPage;
 
 pub fn shell(options: LeptosOptions) -> impl IntoView {
@@ -29,6 +30,8 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
 pub fn App() -> impl IntoView {
     // Provides context that manages stylesheets, titles, meta tags, etc.
     provide_meta_context();
+    let active_tool = RwSignal::new(Toolzard::GlassFinder);
+    provide_context(active_tool);
 
     view! {
         // injects a stylesheet into the document <head>
@@ -36,7 +39,7 @@ pub fn App() -> impl IntoView {
         <Stylesheet id="leptos" href="/pkg/aeon-tools.css" />
 
         // sets the document title
-        <Title text="Welcome to Leptos" />
+        <Title text="Toolzard | Aeon Logics" />
 
         // content for this welcome page
         <Router>
